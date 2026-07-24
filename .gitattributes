@@ -1,2 +1,19 @@
-# Auto detect text files and perform LF normalization
+# Normalize line endings for text files, store LF in the repo.
 * text=auto
+
+# Never line-ending-normalize binaries (it corrupts them — e.g. the CV
+# PDF was being silently rewritten under the blanket `text=auto`).
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.webp  binary
+*.ico   binary
+*.mp4   binary
+*.webm  binary
+*.mov   binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.eot   binary

@@ -5,58 +5,93 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title & identity -->
+    <title>Grace Tiwa | Software Developer</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#0F766E" />
+    <meta name="author" content="Grace Tiwa" />
+    <meta name="description" content="Grace Tiwa, software developer with five years' experience building production web applications in C#, .NET, React and TypeScript. Portfolio, experience and contact." />
 
-    <!-- Title -->
-    <title>Grace | Personal Portfolio</title>
+    <link rel="canonical" href="https://tiwagraceportfolio.vercel.app/" />
 
-    <!-- Font-Awesome CSS -->
-    <link rel="stylesheet" href="assets/vendors/font-awesome/css/all.min.css" />
+    <!-- Open Graph (LinkedIn, Facebook, Slack, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Grace Tiwa" />
+    <meta property="og:title" content="Grace Tiwa | Software Developer" />
+    <meta property="og:description" content="Software developer with five years' experience building production web applications in C#, .NET, React and TypeScript." />
+    <meta property="og:url" content="https://tiwagraceportfolio.vercel.app/" />
+    <meta property="og:image" content="https://tiwagraceportfolio.vercel.app/assets/images/Home/image9.png" />
+    <meta property="og:image:alt" content="Portrait of Grace Tiwa" />
 
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="assets/vendors/swiper/swiper.css" />
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Grace Tiwa | Software Developer" />
+    <meta name="twitter:description" content="Software developer with five years' experience building production web applications in C#, .NET, React and TypeScript." />
+    <meta name="twitter:image" content="https://tiwagraceportfolio.vercel.app/assets/images/Home/image9.png" />
 
-    <!-- Magnific-Popup CSS -->
-    <link rel="stylesheet" href="assets/vendors/magnific-popup/magnific-popup.css" />
+    <!-- Google Fonts: Newsreader (editorial display) + IBM Plex Sans/Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Custom Stylesheets -->
-    <link rel="stylesheet"  href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <!-- Enable scroll reveal only when motion is welcome (set before paint = no flash) -->
+    <script>
+        if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.documentElement.className += ' has-reveal';
+
+            // Failsafe: .reveal elements start at opacity 0 and are shown by
+            // reveal.js. If that script never ran, drop the hidden state so
+            // the page can never be left blank.
+            window.addEventListener('load', function () {
+                setTimeout(function () {
+                    var root = document.documentElement;
+                    if (!root.classList.contains('reveal-ready')) {
+                        root.classList.remove('has-reveal');
+                    }
+                }, 2000);
+            });
+        }
+    </script>
 
 </head>
 <body>
 
 
     <!-------------------- Scroll-Top Area (Start) -------------------->
-    <a href="#home" class="scroll-top">
-        <i class="fas fa-angle-up"></i>
+    <a href="#home" class="scroll-top" aria-label="Back to top">
+        <svg class="icon icon-angle-up" viewBox="0 0 320 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg>
     </a>
     <!-------------------- Scroll-Top Area (End) -------------------->
 
-        
+
 
     <!-------------------- Header Area (Start) -------------------->
     <header class="header">
 
         <!-- Logo -->
         <a class="logo" href="#home">
-            <h2> Grace T </h2> 
+            <h2>Grace Tiwa</h2>
         </a>
         <!-- Logo End -->
 
         <!-- Navbar -->
-        <nav class="navbar">
-            <a href="#home">home</a>
-            <a href="#about">about</a>
-            <a href="#service">service</a>
-            <a href="#portfolio">portfolio</a>
-            <a href="#testimonial">testimonials</a>
-            <a href="#blog">blogs</a>
-            <a href="#contact">contact</a>
+        <nav class="navbar" id="primary-nav">
+            <a href="#home">Home</a>
+            <a href="#portfolio">Work</a>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#service">Services</a>
+            <a href="#contact">Contact</a>
+            <span class="nav-indicator" aria-hidden="true"></span>
         </nav>
 
         <!-- Menubar -->
-        <div class="fas fa-bars" id="menu-btn"></div>
-        
+        <button type="button" class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><svg class="icon icon-bars" viewBox="0 0 448 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+
     </header>
     <!-------------------- Header Area (End) -------------------->
 
@@ -65,285 +100,309 @@
 
         <div class="box-container">
 
-            <div class="content">
+            <div class="content reveal">
                 <div class="text">
-                    <h2>hi !</h1>
-                        <h1>I Am a <span class="typing-text"></span></h1>
-                        <p>I'm thrilled to have you stop by and explore my world of code and creativity. I'm Tiwa Grace, a passionate software developer on a journey to transform ideas into elegant and functional digital solutions.</p>
-                    <a href="#about" class="btn">about me <i class="fas fa-user"></i></a>
+                    <h1>I build web applications that stay in <span class="accent">production</span>.</h1>
+                    <p class="lead">Software developer, five years, currently in Dubai. C#, .NET, React, TypeScript, Node, WordPress.</p>
+                    <div class="hero-actions">
+                        <a href="#portfolio" class="btn btn--primary">View work <svg class="icon icon-arrow-right" viewBox="0 0 448 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg></a>
+                        <a href="./Grace-Tiwa-CV.pdf" class="btn" download>Download CV <svg class="icon icon-download" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"/></svg></a>
+                    </div>
+                    <div class="hero-links">
+                        <a href="https://github.com/tiwagt" target="_blank" rel="noopener"><svg class="icon icon-github" viewBox="0 0 496 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> GitHub</a>
+                        <a href="https://www.linkedin.com/in/grace-tiwa" target="_blank" rel="noopener"><svg class="icon icon-linkedin-in" viewBox="0 0 448 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg> LinkedIn</a>
+                    </div>
                 </div>
             </div>
-            <div class="image">
-                <img src="./assets/images/Home/image9.png" alt="Home-Image">
+            <div class="image reveal">
+                <div class="portrait">
+                    <img src="./assets/images/Home/image9.png" alt="Portrait of Grace Tiwa"
+                         width="375" height="666" fetchpriority="high" decoding="async">
+                </div>
             </div>
 
         </div>
 
     </section>
-
     <!-------------------- Home Area (End) -------------------->
-    
+
+    <!-------------------- Selected Work Area (Start) -------------------->
+    <section class="work" id="portfolio">
+
+        <div class="heading reveal">
+            <h2>Selected work</h2>
+        </div>
+
+        <div class="box-container">
+
+            <!-- 1 · PlatOS (lead) -->
+            <article class="work-item reveal">
+                <div class="work-media">
+                    <div class="browser">
+                        <div class="browser-bar" aria-hidden="true">
+                            <span></span><span></span><span></span>
+                            <div class="browser-url"></div>
+                        </div>
+                        <div class="browser-screen">
+                            <video id="platos-video" width="1280" height="720"
+                                   poster="./assets/images/Portfolio/platos-poster.jpg"
+                                   autoplay loop muted playsinline preload="metadata">
+                                <source src="./assets/images/Portfolio/PlatOS_en_promoVideo.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <button type="button" class="video-toggle" id="platos-toggle" aria-label="Pause video" aria-pressed="true">
+                        <svg class="icon icon-pause" viewBox="0 0 448 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z"/></svg>
+                    </button>
+                </div>
+                <div class="work-body">
+                    <span class="work-context">Restaurant SaaS · solo build</span>
+                    <h3>PlatOS</h3>
+                    <!-- Scale figures are approximate (owner-supplied estimate); tune to real numbers when available. -->
+                    <p>A restaurant was running orders across WhatsApp, phone and walk-ins, and losing them in the gaps. PlatOS replaces that with one system: direct orders, menus and pricing, customer profiles, invoicing, and live remote monitoring of the floor. I built it solo, front to back, in React and Node. It now runs the day-to-day for a working business, moving several hundred orders a month through a single source of truth the owner can watch in real time from anywhere.</p>
+                    <ul class="tech">
+                        <li>React</li>
+                        <li>Node.js</li>
+                        <li>JavaScript</li>
+                    </ul>
+                    <div class="work-links">
+                        <span class="work-note"><svg class="icon icon-lock" viewBox="0 0 448 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"/></svg> Private business app, login required</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2 · Afrique Media (lead) -->
+            <article class="work-item reveal">
+                <div class="work-media">
+                    <div class="browser">
+                        <div class="browser-bar" aria-hidden="true">
+                            <span></span><span></span><span></span>
+                            <div class="browser-url"></div>
+                        </div>
+                        <div class="browser-screen">
+                            <img src="./assets/images/Portfolio/afriqueMedia.png" alt="Afrique Media news platform"
+                                 width="1901" height="868" loading="lazy" decoding="async" />
+                        </div>
+                    </div>
+                </div>
+                <div class="work-body">
+                    <span class="work-context">Media platform · in production</span>
+                    <h3>Afrique Media</h3>
+                    <p>A pan-African news and broadcast network needed its ageing WordPress platform rebuilt. I owned the redesign end to end, covering front end, templating and integration, modernised outdated plugins and themes for security and cross-browser reliability, and centralised the team's documentation. It cut recurring technical issues by around 20%, and it is still in production today, serving readers daily across web and mobile.</p>
+                    <ul class="tech">
+                        <li>WordPress</li>
+                        <li>PHP</li>
+                        <li>JavaScript</li>
+                        <li>HTML</li>
+                        <li>SCSS</li>
+                    </ul>
+                    <div class="work-links">
+                        <a class="work-link" href="https://afriquemedia.tv/" target="_blank" rel="noopener">Live site <svg class="icon icon-external-link-alt" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"/></svg></a>
+                       
+                    </div>
+                </div>
+            </article>
+
+            <!-- 3 · Banking app UI -->
+            <article class="work-item reveal">
+                <div class="work-media">
+                    <div class="browser">
+                        <div class="browser-bar" aria-hidden="true">
+                            <span></span><span></span><span></span>
+                            <div class="browser-url"></div>
+                        </div>
+                        <div class="browser-screen">
+                            <img src="./assets/images/Portfolio/bankApp.png" alt="Banking app dashboard interface"
+                                 width="1897" height="868" loading="lazy" decoding="async" />
+                        </div>
+                    </div>
+                </div>
+                <div class="work-body">
+                    <span class="work-context">Front-end &amp; accessibility build</span>
+                    <h3>Banking app UI</h3>
+                    <p>A self-directed build: a production-grade banking dashboard covering accounts, transfers and transaction history, treated as an accessibility and performance exercise rather than a product. I designed and built the whole interface, component-driven in React and Tailwind, with accessible, keyboard-navigable forms and a layout that holds from mobile to desktop. No backend, just the front end done properly.</p>
+                    <ul class="tech">
+                        <li>React</li>
+                        <li>Tailwind CSS</li>
+                        <li>Accessibility</li>
+                    </ul>
+                    <div class="work-links">
+                        <a class="work-link" href="https://eloquent-gingersnap-846ae4.netlify.app/" target="_blank" rel="noopener">Live site <svg class="icon icon-external-link-alt" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"/></svg></a>
+                    </div>
+                </div>
+            </article>
+
+
+        </div>
+
+    </section>
+    <!-------------------- Selected Work Area (End) -------------------->
+
     <!-------------------- About Area (Start) -------------------->
     <section class="about" id="about">
 
         <div class="box-container">
 
-            <div class="image">
-                <img src="./assets/images/About/image10 (4).png" alt="About-Image" />
+            <div class="about-aside reveal">
+                <h2 class="about-kicker">About</h2>
+                <p class="about-quote">I care as much about a thing staying up as I do about shipping it.</p>
             </div>
-    
-            <div class="content">
 
-                <h2>My name is Tiwa Grace.</h2>
-                <p>My love for technology began when I entered my first tech competition in 2018., and since then, I've been excited to learn, innovate, and collaborate.From working on personal projects that help improve my creativity, to collaborating with talented teams on larger-scale projects, I've gain my skills in a variety of languages and frameworks. I have the ability to work independently as well as in a team. My autonomy allows me to work effectively remotely or on site, meeting challenges without geographic restrictions</p>
-                <div class="about-info">
+            <div class="content reveal">
 
-                    <div class="info">
-                        <h4>age: <span>24</span></h4>
-                        <h4>gender: <span>Female</span></h4>
-                        <h4>language: <span>English, French</span></h4>
-                        <h4>work: <span>Software developer/Front-End Developer</span></h4>
-                        
-                        <a href="./Tiwa Tazamo Grace CV.pdf" class="btn" >download CV <i class="fas fa-download"></i></a>
-                    </div>
+                <p>I got into tech after entering my first competition in 2018, and I've been building ever since. I work across the stack, with C# and .NET on the back end and React and TypeScript on the front, and I have a soft spot for interfaces and for code that keeps running long after launch. Most of my recent work has been in fintech, where reliability isn't optional.</p>
 
-                    <div class="counting">
+                <ul class="about-facts">
+                    <li>Five years developing</li>
+                    <li>Three in fintech</li>
+                    <li>A site live since 2021</li>
+                    <li>English &amp; French</li>
+                </ul>
 
-                        <div class="box">
-                            <h1 class="count" data-count="2">2+</h1>
-                            <h3>years of experience</h3>
-                        </div>
-                        
-                        <div class="box">
-                            <h1 class="count" data-count="5">5+</h1>
-                            <h3>projects completed</h3>
-                        </div>
-                        
-                        <div class="box">
-                            <h1 class="count" data-count="5">5+</h1>
-                            <h3>happy clients</h3>
-                        </div>
-                        
-                        <div class="box">
-                            <h1 class="count" data-count="1">1</h1>
-                            <h3>awards won</h3>
-                        </div>
-                    
-                    </div>
+                <a href="./Grace-Tiwa-CV.pdf" class="btn" download>Download CV <svg class="icon icon-download" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"/></svg></a>
 
-                </div>
-                
             </div>
-            
+
         </div>
 
         <div class="skill-container">
 
-            <div class="heading">
-                <h2>my <span>skills</span></h2>
+            <div class="heading reveal">
+                <h2>Skills</h2>
             </div>
 
-            <div class="skills">
-                <div class="skill-item item1">
-                    <div class="box">
-                        <h3>HTML5<span> </span> </h3>
-                        <div class="progress-bar"> <span></span> </div>
-                    </div>
-                    <div class="box">
-                        <h3>CSS3<span>  </span> </h3>
-                        <div class="progress-bar"> <span></span> </div>
-                    </div>
-                    <div class="box">
-                        <h3>Tailwind<span>  </span> </h3>
-                        <div class="progress-bar"> <span></span> </div>
-                    </div>
-                    <div class="box">
-                        <h3>javascript<span>  </span> </h3>
-                        <div class="progress-bar"> <span></span> </div>
-                    </div>
-                    <div class="box">
-                        <h3>ReactJS<span>  </span> </h3>
-                        <div class="progress-bar"> <span></span> </div>
-                    </div>
-                    <div class="box">
-                        <h3>JQuery<span>  </span> </h3>
-                        <div class="progress-bar"> <span></span> </div>
-                    </div>
-                    <div class="box">
-                        <h3>Node Js<span>  </span> </h3>
-                        <div class="progress-bar"> <span></span> </div>
-                    </div>
-                    <div class="box">
-                        <h3>JSON<span>  </span> </h3>
-                        <div class="progress-bar"> <span></span> </div>
-                    </div>
+            <div class="skillset">
+
+                <div class="skill-col reveal">
+                    <h4 class="skill-label">Frontend</h4>
+                    <ul>
+                        <li>HTML &amp; CSS</li>
+                        <li>JavaScript / TypeScript</li>
+                        <li>React</li>
+                        <li>Tailwind</li>
+                        <li>Accessibility</li>
+                    </ul>
                 </div>
 
-                <div class="skill-item item2">
-                    <div class="box">
-                        <h3>C#<span>  </span> </h3>
-                        <div class="progress-bar"> <span></span> </div>
-                    </div>
-                    <div class="box">
-                        <h3>ASP.NET 6+<span>  </span> </h3>
-                        <div class="progress-bar"> <span></span> </div>
-                    </div>
-                    <div class="box">
-                        <h3>WPF/WCF/MVC<span>  </span> </h3>
-                        <div class="progress-bar"> <span></span> </div>
-                    </div>
-                    <div class="box">
-                        <h3>.NET Blazor/Razor<span>  </span> </h3>
-                        <div class="progress-bar"> <span></span> </div>
-                    </div>
-                    <div class="box">
-                        <h3>Docker<span>  </span> </h3>
-                        <div class="progress-bar"> <span></span> </div>
-                    </div>
-                    <div class="box">
-                        <h3>Microsoft SQL<span>  </span> </h3>
-                        <div class="progress-bar"> <span></span> </div>
-                    </div>
-                    
-                    <div class="box">
-                        <h3><span> Git </span> </h3>
-                        <div class="progress-bar"> <span></span> </div>
-                    </div>
-
-                    <div class="box">
-                        <h3><span> Wordpress </span> </h3>
-                        <div class="progress-bar"> <span></span> </div>
-                    </div>
+                <div class="skill-col reveal">
+                    <h4 class="skill-label">Backend</h4>
+                    <ul>
+                        <li>C# / .NET</li>
+                        <li>ASP.NET, Blazor, Razor</li>
+                        <li>Node.js</li>
+                        <li>SQL Server</li>
+                        <li>PHP</li>
+                    </ul>
                 </div>
-    
+
+                <div class="skill-col reveal">
+                    <h4 class="skill-label">Tools</h4>
+                    <ul>
+                        <li>Git</li>
+                        <li>Docker</li>
+                        <li>WordPress</li>
+                        <li>REST / JSON</li>
+                    </ul>
+                </div>
+
             </div>
-    
+
         </div>
 
     </section>
     <!-------------------- About Area (End) -------------------->
 
-    
 
-    <!-------------------- Qualification Area (Start) -------------------->
-    <section class="qualification">
 
-        <div class="heading">
-            <h2>my <span>qualification</span></h2>
+    <!-------------------- Experience Area (Start) -------------------->
+    <section class="experience" id="experience">
+
+        <div class="heading reveal">
+            <h2>Experience</h2>
         </div>
 
         <div class="box-container">
 
-            <div class="education">
+            <ul class="exp-list">
 
-                <div class="experience-item">
-                    <i class="fas fa-graduation-cap"></i>
-                    <div class="content">
-                        <span>2017 - 2018</span>
-                        <h3>General Certificate of Education Advanced level</h3>
-                        <p>I got my GCE A level in GBHS Bafoussam Rural with 3 papers Computer Science, Mathematics and Physics .</p>
+                <li class="exp-item reveal">
+                    <div class="exp-head">
+                        <h3>Software Developer <span>· eBOS, Remote</span></h3>
+                        <span class="exp-dates">March 2023 to April 2026</span>
                     </div>
-                </div>
-    
-                <div class="experience-item">
-                    <i class="fas fa-graduation-cap"></i>
-                    <div class="content">
-                        <span>2020 - 2021</span>
-                        <h3>Higher National Diploma (HND) in software engineering</h3>
-                        <p>I obtained my HND diploma at the IUG institute with honors after 2 years of study.</p>
-                    </div>
-                </div>
-        
-                <div class="experience-item">
-                    <i class="fas fa-graduation-cap"></i>
-                    <div class="content">
-                        <span>2021 - 2022</span>
-                        <h3>Bachelor Degree in software engineering</h3>
-                        <p>I obtained my Bachelor degree at the IUG institute with honors after 3 years of study..</p>
-                    </div>
-                </div>
+                    <p>Design and build scalable fintech solutions in C#, .NET, React and SQL, with an international Agile team.</p>
+                </li>
 
-            </div>
-
-            <div class="experience">
-
-                <div class="experience-item">
-                    <i class="fas fa-briefcase"></i>
-                    <div class="content">
-                        <span>2020</span>
-                        <h3>Professional Internship @Afrique Media</h3>
-                        <p>A professional internship at Afrique media which focused on the redesign of their existing website.</p>
+                <li class="exp-item reveal">
+                    <div class="exp-head">
+                        <h3>Web Developer <span>· Lahkam LTD, Remote</span></h3>
+                        <span class="exp-dates">February 2022 to February 2023</span>
                     </div>
-                </div>
-    
-                <div class="experience-item">
-                    <i class="fas fa-briefcase"></i>
-                    <div class="content">
-                        <span>2022</span>
-                        <h3>Software development @Lahkam</h3>
-                        <p>As a freelancer, I worked on the design of a website for an NGO (Young and Creative) based in Africa.</p>
-                    </div>
-                </div>
+                    <p>Built and deployed a responsive platform for an NGO, and cleaned up legacy code to cut maintenance time.</p>
+                </li>
 
-                <div class="experience-item">
-                    <i class="fas fa-briefcase"></i>
-                    <div class="content">
-                        <span>2023-2024</span>
-                        <h3>Software development @eBOS</h3>
-                        <p>I have worked for an innovative software company providing state-of-the-art RegTech and Fintech solutions that automate risk and compliance management for organizations on a worldwide basis.</p>
+                <li class="exp-item reveal">
+                    <div class="exp-head">
+                        <h3>Web Developer <span>· Afrique Media, Douala (Freelance)</span></h3>
+                        <span class="exp-dates">June 2019 to December 2020</span>
                     </div>
-                </div>
-    
-                
-    
-            </div>
+                    <p>Redesigned the company's WordPress site for a smoother, more secure, cross-browser experience.</p>
+                </li>
+
+            </ul>
+
+            <h4 class="exp-subhead">Education</h4>
+
+            <ul class="exp-list">
+
+                <li class="exp-item reveal">
+                    <div class="exp-head">
+                        <h3>Bachelor's degree, Software Engineering <span>· University Institute Gulf of Guinea</span></h3>
+                        <span class="exp-dates">2021 to 2022</span>
+                    </div>
+                </li>
+
+                <li class="exp-item reveal">
+                    <div class="exp-head">
+                        <h3>HND, Software Engineering <span>· University Institute Gulf of Guinea</span></h3>
+                        <span class="exp-dates">2019 to 2021</span>
+                    </div>
+                </li>
+
+            </ul>
 
         </div>
     </section>
-
-    <!-------------------- Qualification Area (End) -------------------->
+    <!-------------------- Experience Area (End) -------------------->
 
 
 
     <!-------------------- Services Area (Start) -------------------->
     <section class="service" id="service">
 
-        <div class="heading">
-            <h2>my <span>services</span></h2>
+        <div class="heading reveal">
+            <h2>Services</h2>
         </div>
 
         <div class="box-container">
 
-            <div class="service-item">
-                <i class="fas fa-code"></i>
-                <h3>Software Development</h3>
-                <p>competent in C#, .NET Framework, T-SQL, Visual Studio, SQL Server.</p>
+            <div class="service-item reveal">
+                <i class="service-icon"><svg class="icon icon-code" viewBox="0 0 640 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z"/></svg></i>
+                <h3>Web application development</h3>
+                <p>Full-stack builds in C#, .NET, React and TypeScript, from database to interface.</p>
             </div>
 
-            <div class="service-item">
-                <i class="fas fa-code"></i>
-                <h3>web design</h3>
-                <p>The Best User Experience On Your Website.</p>
+            <div class="service-item reveal">
+                <i class="service-icon"><svg class="icon icon-laptop-code" viewBox="0 0 640 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"/></svg></i>
+                <h3>Front-end &amp; UI</h3>
+                <p>Responsive, accessible interfaces that hold up from mobile to desktop.</p>
             </div>
 
-            <div class="service-item">
-                <i class="fas fa-paint-brush"></i>
-                <h3>graphic design</h3>
-                <p>Logo, business card, social media banner etc...</p>
-            </div>
-
-            
-
-            <div class="service-item">
-                <i class="fas fa-bullhorn"></i>
-                <h3>digital marketing</h3>
-                <p>Help you create a digital identity.</p>
-            </div>
-
-            <div class="service-item">
-                <i class="fas fa-search-dollar"></i>
-                <h3>SEO Marketing</h3>
-                <p>Helping you get to the top of searches.</p>
+            <div class="service-item reveal">
+                <i class="service-icon"><svg class="icon icon-tachometer-alt" viewBox="0 0 576 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M288 32C128.94 32 0 160.94 0 320c0 52.8 14.25 102.26 39.06 144.8 5.61 9.62 16.3 15.2 27.44 15.2h443c11.14 0 21.83-5.58 27.44-15.2C561.75 422.26 576 372.8 576 320c0-159.06-128.94-288-288-288zm0 64c14.71 0 26.58 10.13 30.32 23.65-1.11 2.26-2.64 4.23-3.45 6.67l-9.22 27.67c-5.13 3.49-10.97 6.01-17.64 6.01-17.67 0-32-14.33-32-32S270.33 96 288 96zM96 384c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm48-160c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm246.77-72.41l-61.33 184C343.13 347.33 352 364.54 352 384c0 11.72-3.38 22.55-8.88 32H232.88c-5.5-9.45-8.88-20.28-8.88-32 0-33.94 26.5-61.43 59.9-63.59l61.34-184.01c4.17-12.56 17.73-19.45 30.36-15.17 12.57 4.19 19.35 17.79 15.17 30.36zm14.66 57.2l15.52-46.55c3.47-1.29 7.13-2.23 11.05-2.23 17.67 0 32 14.33 32 32s-14.33 32-32 32c-11.38-.01-20.89-6.28-26.57-15.22zM480 384c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z"/></svg></i>
+                <h3>Maintenance &amp; performance</h3>
+                <p>Modernising legacy code and keeping sites fast, secure and in production.</p>
             </div>
 
         </div>
@@ -353,345 +412,61 @@
 
 
 
-    <!-------------------- Portfolio Area (Start) -------------------->
-    <section class="portfolio" id="portfolio">
-
-        <div class="heading">
-            <h2>my <span>portfolio</span></h2>
-        </div>
-
-        <div class="gallery">
-
-            <ul class="controls">
-                <li class="button btn active" data-filter="all">all</li>
-                <li class="button btn" data-filter="web">web development</li>
-                <li class="button btn" data-filter="design">graphic design</li>
-            </ul>
-    
-            <div class="box-container">
-                
-                <div class="portfolio-item image web">
-                    <img src="./assets/images/Portfolio/bankApp.png" alt="Portfolio-Image" />
-                    <div class="content">
-                        <h4>web development</h4>
-                        <p>category</p>
-                        <a data-effect="mfp-newspaper" href="./assets/images/Portfolio/bankApp.png" class="view-btn"><i class="fas fa-search-plus"></i></a><br>
-                        <!-- Link to Online App -->
-                        <a href="https://eloquent-gingersnap-846ae4.netlify.app/" class="app-link" target="_blank">
-                            <i class="fa fa-link" style="color: #74C0FC;"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item image web">
-                    <img src="./assets/images/Portfolio/nailbooking app.png" alt="Portfolio-Image" />
-                    <div class="content">
-                        <h4>web development</h4>
-                        <p>category</p>
-                        <a data-effect="mfp-newspaper" href="./assets/images/Portfolio/nailbooking app.png" class="view-btn"><i class="fas fa-search-plus"></i></a><br>
-                        <!-- Link to Online App -->
-                        <a href="https://nailsalonbookingapp.netlify.app/" class="app-link" target="_blank">
-                            <i class="fa fa-link" style="color: #74C0FC;"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item image web">
-                    <img src="./assets/images/Portfolio/afriqueMedia.png" alt="Portfolio-Image" />
-                    <div class="content">
-                        <h4>web development</h4>
-                        <p>category</p>
-                        <a data-effect="mfp-newspaper" href="./assets/images/Portfolio/afriqueMedia.png" class="view-btn"><i class="fas fa-search-plus"></i></a><br>
-                        <!-- Link to Online App -->
-                        <a href="https://afriquemedia.tv/" class="app-link" target="_blank">
-                            <i class="fa fa-link" style="color: #74C0FC;"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item image web">
-                    <img src="./assets/images/Portfolio/young and creative.png" alt="Portfolio-Image" />
-                    <div class="content">
-                        <h4>web development</h4>
-                        <p>category</p>
-                        <a data-effect="mfp-newspaper" href="./assets/images/Portfolio/young and creative.png" class="view-btn"><i class="fas fa-search-plus"></i></a>
-                    </div>
-                </div>
-    
-                <div class="portfolio-item image design">
-                    <img src="./assets/images/Portfolio/menu2.png" alt="Portfolio-Image" />
-                    <div class="content">
-                        <h4>graphic design</h4>
-                        <p>category</p>
-                        <a data-effect="mfp-newspaper" href="./assets/images/Portfolio/menu2.png" class="view-btn"><i class="fas fa-search-plus"></i></a>
-                    </div>
-                </div>
-    
-                <div class="portfolio-item image design">
-                    <img src="./assets/images/Portfolio/agit.jpg" alt="Portfolio-Image" />
-                    <div class="content">
-                        <h4>graphic design</h4>
-                        <p>category</p>
-                        <a data-effect="mfp-newspaper" href="./assets/images/Portfolio/agit.jpg" class="view-btn"><i class="fas fa-search-plus"></i></a>
-                    </div>
-                </div>
-                <div class="portfolio-item image web">
-                    <img src="./assets/images/Portfolio/musely.jpg" alt="Portfolio-Image" />
-                    <div class="content">
-                        <h4>web development</h4>
-                        <p>category</p>
-                        <a data-effect="mfp-newspaper" href="./assets/images/Portfolio/musely.jpg" class="view-btn"><i class="fas fa-search-plus"></i></a>
-                    </div>
-                </div>
-    
-                <div class="portfolio-item image design">
-                    <img src="./assets/images/Portfolio/facebook banner.jpg" alt="Portfolio-Image" />
-                    <div class="content">
-                        <h4>Facebook banner</h4>
-                        <p>category</p>
-                        <a data-effect="mfp-newspaper" href="./assets/images/Portfolio/facebook banner.jpg" class="view-btn"><i class="fas fa-search-plus"></i></a>
-                    </div>
-                </div>
-    
-            </div>
-    
-        </div>
-        
-    </section>
-    <!-------------------- Portfolio Area (End) -------------------->
-
-
-
-    <!-------------------- Testimonials Area (Start) -------------------->
-    <section class="testimonial" id="testimonial">
-
-        <div class="heading">
-            <h2><span>testimonials</span></h2>
-        </div>
-
-        <div class="swiper-container testimonial-slider">
-            <div class="swiper-wrapper">
-
-                <div class="swiper-slide testi-item">
-                    <img src="./assets/images/Testimonials/arsern.jpg" alt="Testimonial-Pic" />
-
-                    <i class="fas fa-quote-left"></i>
-
-                    <p class="comment">
-                        It was a real pleasure to work with her. she is very open to criticism and with a mad desire to improve.
-                    </p>
-
-                    <div class="intro">
-                        <h3>Arsene Djeukam</h3>
-                        <h5>web developer</h5>
-                    </div>
-                </div>
-
-                <div class="swiper-slide testi-item">
-                    <img src="./assets/images/Testimonials/Sedi.jpg" alt="Testimonial-Pic" />
-
-                    <i class="fas fa-quote-left"></i>
-
-                    <p class="comment">
-                        She followed the specifications very well. the job was well done.
-                    </p>
-
-                    <div class="intro">
-                        <h3>Sedi Flore</h3>
-                        <h5>Client</h5>
-                    </div>
-                </div>
-
-                <div class="swiper-slide testi-item">
-                    <img src="./assets/images/Testimonials/Mr Jean Claude.jpg" alt="Testimonial-Pic" />
-
-                    <i class="fas fa-quote-left"></i>
-
-                    <p class="comment">
-                        Satisfied with the work done, very remarkable work.
-                    </p>
-
-                    <div class="intro">
-                        <h3>Jean Claude</h3>
-                        <h5>Client</h5>
-                    </div>
-                </div>
-
-                <div class="swiper-slide testi-item">
-                    <img src="./assets/images/Testimonials/mme Estelle.jpg" alt="Testimonial-Pic" />
-
-                    <i class="fas fa-quote-left"></i>
-
-                    <p class="comment">
-                        my website was designed on time. It was a pleasure working with her.
-                    </p>
-
-                    <div class="intro">
-                        <h3>Estelle Nzuko </h3>
-                        <h5>Client</h5>
-                    </div>
-                </div>
-
-                
-
-            </div>
-
-            <div class="swiper-pagination swiper-pagination1"></div>
-
-        </div>
-    </section>
-    <!-------------------- Testimonials Area (End) -------------------->
-
-
-        <!-------------------- Blog Area (Start) 
-        <section class="blog" id="blog">
-
-            <div class="heading">
-                <h2>my <span>blog</span></h2>
-            </div>
-    
-            <div class="swiper-container blog-slider">
-                <div class="swiper-wrapper">
-    
-                    <div class="swiper-slide blog-item">
-                        <div class="image">
-                            <img src="./assets/images/Blogs/responsive design.jpg" alt="Blog-Image" />
-                        </div>
-                        <div class="content">
-                            <div class="intro">
-                                <h5><i class="fas fa-calendar-alt"></i><span>1st Dec, 2022</span></h5>
-                                <h5><i class="fas fa-user"></i><span>by Grace T</span></h5>
-                            </div>
-                            <a class="main-heading" href="#">How to make your website responsive</a>
-                            <p>Responsive web design refers to a design strategy that creates websites that work, ...
-                            </p>    
-                            <a href="https://www.browserstack.com/guide/how-to-create-responsive-website" class="btn">read more <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-    
-                    <div class="swiper-slide blog-item">
-                        <div class="image">
-                            <img src="./assets/images/Blogs/canva.jpg" alt="Blog-Image" />
-                        </div>
-                        <div class="content">
-                            <div class="intro">
-                                <h5><i class="fas fa-calendar-alt"></i><span>3st July, 2022</span></h5>
-                                <h5><i class="fas fa-user"></i><span>by Grace T</span></h5>
-                            </div>
-                            <a class="main-heading" href="#">Learn Canva</a>
-                            <p>Fast-track your ability to create amazing designs. Canva's tutorials have all the tools you need for your creative journey.
-                            </p>    
-                            <a href="#" class="btn">read more <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-    
-                    <div class="swiper-slide blog-item">
-                        <div class="image">
-                            <img src="./assets/images/Blogs/roadmap.png" alt="Blog-Image" />
-                        </div>
-                        <div class="content">
-                            <div class="intro">
-                                <h5><i class="fas fa-calendar-alt"></i><span>6st jan, 2022</span></h5>
-                                <h5><i class="fas fa-user"></i><span>by Grace T</span></h5>
-                            </div>
-                            <a class="main-heading" href="#">Complete Roadmap For Web Development</a>
-                            <p>Those websites which you scroll to are created by none other than web developers.
-                            </p>    
-                            <a href="https://www.geeksforgeeks.org/roadmap-to-become-a-web-developer-in-2022/" class="btn">read more <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-    
-                    <div class="swiper-slide blog-item">
-                        <div class="image">
-                            <img src="./assets/images/Blogs/web development tools.jpg" alt="Blog-Image" />
-                        </div>
-                        <div class="content">
-                            <div class="intro">
-                                <h5><i class="fas fa-calendar-alt"></i><span>10st jan, 2022</span></h5>
-                                <h5><i class="fas fa-user"></i><span>by Grace T</span></h5>
-                            </div>
-                            <a class="main-heading" href="#">Websites & Tools For Every Web Developer</a>
-                            <p>Web development tools every developer should know to be called a web developer ..
-                            </p>    
-                            <a href="https://careerfoundry.com/en/blog/web-development/7-essential-tools-for-front-end-development/" class="btn">read more <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-    
-                    
-    
-                </div>
-    
-                <div class="swiper-pagination swiper-pagination2"></div>
-    
-            </div>
-    
-        </section>
-         Blog Area (End) -------------------->
-
-
-
     <!-------------------- Contact Area (Start) -------------------->
     <section class="contact" id="contact">
 
-        <div class="heading">
-            <h2><span>contact</span> me</h2>
-        </div>
-
         <div class="box-container">
 
-            <div class="contact-info">
-
-                <h3>get in touch</h3>
-
-                <p>It will be a pleasure to exchange with you.</p>
-    
-                <div class="info-item">
-                    <h4>Phone:</h4>
-                    <div class="detail">
-                        <div class="fas fa-phone"></div>
-                        <p>+237-698-400-352 (Whatsapp)</p>
-                    </div>
-                    
-                </div>
-    
-                <div class="info-item">
-                    <h4>email:</h4>
-                    <div class="detail">
-                        <div class="fas fa-envelope"></div>
-                        <p class="gmail">gtiwa712@gmail.com </p>
-                    </div>
-                    
-                </div>
-
-                <div class="info-item">
-                    <h4>linkedin:</h4>
-                    <div class="detail">
-                        <div class="fab fa-linkedin"></div>
-                        <p class="linkedin"><a href="https://www.linkedin.com/in/grace-tiwa-5847b7231/">https://www.linkedin.com/in/grace-tiwa-5847b7231</a></p>
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <h4>github:</h4>
-                    <div class="detail">
-                        <div class="fab fa-github"></div>
-                        <p class="github"><a href="https://github.com/tiwagt/">https://github.com/tiwagt</a></p>
-                    </div>
-                </div>
+            <div class="contact-lead reveal">
+                <h2>Let's talk.</h2>
+                <ul class="contact-list">
+                    <li>
+                        <span class="contact-label">Email</span>
+                        <!-- Address is assembled by contact.js on click, so it
+                             never appears in the page source for scrapers. -->
+                        <button type="button" class="reveal-email" data-u="gracetiwatazamo" data-d="gmail" data-t="com" aria-label="Reveal email address">
+                            Show email <svg class="icon icon-arrow-right" viewBox="0 0 448 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+                        </button>
+                    </li>
+                    <li>
+                        <span class="contact-label">LinkedIn</span>
+                        <a href="https://www.linkedin.com/in/grace-tiwa" target="_blank" rel="noopener">linkedin.com/in/grace-tiwa</a>
+                    </li>
+                    <li>
+                        <span class="contact-label">GitHub</span>
+                        <a href="https://github.com/tiwagt" target="_blank" rel="noopener">github.com/tiwagt</a>
+                    </li>
+                </ul>
             </div>
-    
-            <form method="post" class="contact-form" id="contactUs-Form">
-                    
-                <input type="text" name="name" class="box" id="name" placeholder="name" required />
-                <input type="email" name="email" class="box" id="email" placeholder="email" required />
-                <input type="text" name="subject" class="box" id="subject" placeholder="subject" required />
-                <textarea cols="30" rows="10" name="comment" id="comment" class="box" placeholder="message"></textarea>
-                <button type="submit" class="btn" name="submit" id="submit">send message</button>
-                
-                <span class="alert" id="msg"></span>
-                
+
+            <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/xvzervnk" method="POST">
+
+                <input type="hidden" name="_subject" value="New message from your portfolio" />
+
+                <div class="field">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Your name" required />
+                </div>
+
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="you@example.com" required />
+                </div>
+
+                <div class="field">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" placeholder="What would you like to talk about?" required></textarea>
+                </div>
+
+                <!-- Honeypot: hidden from people, bots fill it in -->
+                <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+                <button type="submit" class="btn btn--primary">Send message <svg class="icon icon-arrow-right" viewBox="0 0 448 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg></button>
+
+                <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+
             </form>
-            
+
         </div>
 
     </section>
@@ -702,71 +477,25 @@
     <!-------------------- Footer Area (Start) -------------------->
     <footer>
         <div class="social">
-            <a href="https://wa.me/+237698400352" class="fab fa-whatsapp"></a>
-            <!--<a href="https://twitter.com/GT_freeze" class="fab fa-twitter"></a>-->
-            <a href="https://www.linkedin.com/in/grace-tiwa-5847b7231/" class="fab fa-linkedin-in"></a>
+            <a href="https://www.linkedin.com/in/grace-tiwa" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"><svg class="icon icon-linkedin-in" viewBox="0 0 448 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
+            <a href="https://github.com/tiwagt" target="_blank" rel="noopener" class="social-link" aria-label="GitHub"><svg class="icon icon-github" viewBox="0 0 496 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></a>
         </div>
 
         <div class="content">
-            <p>created by <span>Grace T</span> | all rights reserved</p>
+            <p>Created by <span>Grace Tiwa</span> · All rights reserved</p>
         </div>
     </footer>
     <!-------------------- Footer Area (End) -------------------->
 
 
 
-    <!-- JQuery -->
-    <script src="assets/vendors/jquery/jquery-3.6.0.js"></script>
-
-    <!-- SWIPER JS -->
-    <script src="assets/vendors/swiper/swiper.js"></script>
-
-    <!-- Magnific-Popup JS -->
-    <script src="assets/vendors/magnific-popup/jquery.magnific-popup.js"></script>
-
-    <!-- Typed JS -->
-    <script src="assets/vendors/typed/typed.js"></script>
-
-    <!-- Custom Script File -->
+    <!-- No runtime dependencies: everything below is vanilla JS -->
     <script src="assets/js/script.js"></script>
     <script src="assets/js/scroll-spy.js"></script>
-    <script src="assets/js/counter-up.js"></script>
-    <script src="assets/js/portfolio.js"></script>
-    <script src="assets/js/testi-slider.js"></script>
-    <script src="assets/js/blog-slider.js"></script>
-
-    <!---------------- Custom Script ---------------->
-
-    <!-- Typed Script -->
-    <script>
-        var typed = new Typed('.typing-text', {
-
-            strings: ['Software/Front-End developer'],
-            typeSpeed: 120,
-            loop: true
-        });
-    </script>
-
-    <!-- Contact-Form Script -->
-    <script>
-        jQuery('#contactUs-Form').on('submit',function(e){
-            jQuery('#msg').html('');
-            jQuery('#submit').html('Please wait');
-            jQuery('#submit').attr('disabled',true);
-            jQuery.ajax({
-                url:'../tiwagraceportfolio.github.io/assets/php/submit.php',
-                type:'post',
-                data:jQuery('#contactUs-Form').serialize(),
-                success:function(result){
-                    jQuery('#msg').html(result);
-                    jQuery('#submit').html('Submit');
-                    jQuery('#submit').attr('disabled',false);
-                    jQuery('#contactUs-Form')[0].reset();
-                }
-            });
-            e.preventDefault();
-        });
-    </script>
+    <script src="assets/js/nav-indicator.js"></script>
+    <script src="assets/js/reveal.js"></script>
+    <script src="assets/js/contact.js"></script>
+    <script src="assets/js/video.js"></script>
 
 </body>
 </html>

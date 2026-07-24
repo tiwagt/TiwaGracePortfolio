@@ -1,77 +1,80 @@
-/*--------------------- Responsive (Start) ---------------------*/
+/*--------------------- Responsive ---------------------*/
+
+/* Tablet */
 @media (max-width: 991px){
-    html{
-        font-size: 55%;
-    }
+  :root{ --section-y: 96px; }
+
+  .home .box-container{ gap: 3.5rem; }
 }
 
+/* Mobile, collapse nav to a slide-in panel */
 @media (max-width: 768px){
-    header #menu-btn{
-        display: block;
-      } 
-  
-      .header .navbar{
-        width: 30rem;
-        position: absolute;
-        right: 0; 
-        top:100%;
-        padding: 0rem 2rem;
-        background: #F7F5F2;
-        border: 0.1rem solid #BC8CF2;
-        -webkit-transition: 0.2s linear;
-        -moz-transition: 0.2s linear;
-        -o-transition: 0.2s linear;
-        transition: 0.2s linear;
-        -webkit-transform: translateX(100%);
-        transform: translateX(100%);
-        height: calc(100vh - 6rem);
-        overflow-y: auto;
-        -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-    }
-  
-    .header .navbar.active{
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-    }
-  
-    .header .navbar a{
-        display: block;
-        color: #000000;
-        padding: 1.5rem 0;
-        margin: 1rem 0;
-    }
-  
-    .navbar::-webkit-scrollbar{
-        width: 0.8rem;
-    }
-  
-    .navbar::-webkit-scrollbar-thumb{
-        border-radius: 1rem;
-        background-color: #BC8CF2;
-    }
-  
-    .navbar::-webkit-scrollbar-track{
-        background: transparent;
-    }
+  :root{ --section-y: 72px; }
 
-    section, header{
-        padding: 2rem;
-    }
+  .header #menu-btn{ display: block; }
 
+  .header .navbar{
+    position: absolute;
+    top: 100%; right: var(--gutter);
+    width: 16rem;
+    padding: 0.6rem 1.4rem;
+    background: var(--surface);
+    border: 1px solid var(--hairline-2);
+    border-radius: 10px;
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s var(--ease), transform 0.2s var(--ease), visibility 0.2s var(--ease);
+  }
+
+  .header .navbar.active{
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .header .navbar a{
+    display: block;
+    margin: 0;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--hairline-2);
+  }
+
+  .header .navbar a:last-child{ border-bottom: none; }
+
+  /* The nav collapses to a stacked panel, a sliding underline
+     doesn't apply. nav-indicator.js also bails out below 768px. */
+  .nav-indicator{ display: none; }
+
+  .home{ padding-top: 120px; }
+
+  .home .content h1{ font-size: clamp(40px, 11vw, 56px); }
+
+  .skillset{ grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+
+  /* Experience: stack role above its dates */
+  .exp-head{ flex-direction: column; gap: 0.3rem; }
+
+  /* Contact: stack label above value */
+  .contact-list li{ flex-direction: column; gap: 0.2rem; }
+
+  /* Selected work: always stack image over content */
+  .work .box-container{ gap: 4rem; }
+
+  .work-item,
+  .work-item:nth-child(even){
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.8rem;
+  }
 }
 
+/* Small phones */
 @media (max-width: 450px){
-    html{
-        font-size: 50%;
-    }
+  :root{ --gutter: 20px; }
 
-    section, header{
-        padding: 1rem;
-    }
+  .service .box-container{ grid-template-columns: 1fr; }
 
-
-
+  .skillset{ grid-template-columns: 1fr; }
 }
-
-/*--------------------- Responsive (End) ---------------------*/
