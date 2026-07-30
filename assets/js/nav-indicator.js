@@ -1,14 +1,11 @@
-/* Slides the nav underline to whichever link scroll-spy marked active.
-   Listens for scroll-spy's `navspy:change` rather than the scroll event,
-   so it only does layout work when the section actually changes.
-   Hidden on mobile, where the navbar becomes a stacked dropdown panel. */
+/* slides the nav underline to the active link */
 (function () {
   var navbar = document.querySelector('.header .navbar');
   var indicator = navbar && navbar.querySelector('.nav-indicator');
   if (!navbar || !indicator) return;
 
   function update() {
-    // Mobile: the panel is a vertical dropdown, an underline makes no sense.
+    // no underline on the mobile dropdown
     if (window.innerWidth <= 768) {
       indicator.style.opacity = '0';
       return;
@@ -29,12 +26,11 @@
   window.addEventListener('resize', update);
   window.addEventListener('load', update);
 
-  // Webfonts land after first paint and change link widths.
+  // fonts load after paint and shift link widths
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(update);
   }
 
-  // scroll-spy runs its first pass before this file is parsed, so read
-  // the current .active state directly rather than waiting for an event.
+  // read the current active state on load
   update();
 })();

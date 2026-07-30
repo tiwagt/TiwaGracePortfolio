@@ -1,11 +1,6 @@
-/* Fade-and-rise on scroll, 400ms, 16px travel, 60ms stagger.
-   Travel/opacity live in CSS (.reveal); this only toggles
-   .is-visible and applies the per-group stagger. Disabled for
-   reduced-motion users (they never get .has-reveal, and we reveal
-   everything immediately below). */
+/* fade-and-rise on scroll; CSS holds the animation, this toggles .is-visible */
 (function () {
-  // Signals to the failsafe in <head> that this script ran. Without it,
-  // a failed load would leave every .reveal element hidden forever.
+  // tells the <head> failsafe this script ran
   document.documentElement.classList.add('reveal-ready');
 
   var reduce = window.matchMedia &&
@@ -24,7 +19,7 @@
       if (!entry.isIntersecting) return;
       var el = entry.target;
 
-      // Stagger relative to the reveal siblings in the same container.
+      // stagger within the same container
       var group = Array.prototype.filter.call(el.parentNode.children, function (c) {
         return c.classList.contains('reveal');
       });

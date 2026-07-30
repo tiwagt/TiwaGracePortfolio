@@ -43,8 +43,7 @@
 
   .header .navbar a:last-child{ border-bottom: none; }
 
-  /* The nav collapses to a stacked panel, a sliding underline
-     doesn't apply. nav-indicator.js also bails out below 768px. */
+  /* no underline on the mobile panel */
   .nav-indicator{ display: none; }
 
   .home{ padding-top: 120px; }

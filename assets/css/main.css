@@ -1,37 +1,20 @@
-/* ============================================================
-   Design system, Grace Tiwa portfolio
-   Light cream base · ink text · one accent (deep emerald teal)
-   No gradients.
-   ------------------------------------------------------------
-   Type: Newsreader (editorial display serif, optical sizing)
-   over the IBM Plex superfamily, Plex Sans for body/UI, Plex
-   Mono for spec-sheet labels. Sans and mono share DNA, so the
-   technical voice is coherent rather than borrowed.
-   ------------------------------------------------------------
-   The accent lives in exactly two variables. Change --accent
-   and --accent-strong and nothing else. Avoid warm terracotta
-   (#B4522A and neighbours); it clashes with the emerald system.
-   ============================================================ */
+/* Grace Tiwa portfolio, main styles */
 
 :root{
-  /* Colour, base, ink, muted, hairline, one accent */
-  --base:        #FAF9F6;   /* light cream */
+  /* colours */
+  --base:        #ffffff;
   --ink:         #16181D;
   --muted:       #6B6F76;
   --hairline:    rgba(22, 24, 29, 0.10);
   --hairline-2:  rgba(22, 24, 29, 0.06);
   --tint:        #F0EEE8;   /* warm panel, browser chrome */
-  /* Hero portrait panel: the rose polo (#EEBADA) lightened, so the
-     subject sits in a tone drawn from the image. Kept pale because the
-     photo multiplies onto it, so the panel also casts over the subject. */
+  /* pale panel behind the hero portrait */
   --portrait-bg:     #FCF7F9;
   --surface:     #FFFFFF;   /* raised card surface, sits above --base */
   --accent:      #0F766E;   /* deep emerald teal */
   --accent-strong:#134E4A;  /* accent, darker, hover/active text */
 
-  /* Elevation, layered rather than single-blur, so shadows read soft
-     and physical instead of like a grey halo. Tinted with the ink
-     colour, never pure black. */
+  /* shadows */
   --shadow-sm: 0 1px 2px rgba(22, 24, 29, 0.04),
                0 2px 8px rgba(22, 24, 29, 0.04);
   --shadow-md: 0 2px 4px rgba(22, 24, 29, 0.04),
@@ -42,13 +25,11 @@
                0 30px 60px rgba(22, 24, 29, 0.06);
 
   /* Type */
-  --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-display: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --font-sans:  'IBM Plex Sans', system-ui, -apple-system, Segoe UI, sans-serif;
   --font-mono:  'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 
-  /* Motion, one shared curve. Expo-out: quick departure, long soft
-     settle. Every transition on the site uses it, which is what makes
-     the motion feel authored rather than defaulted to `ease`. */
+  /* one easing curve for everything */
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Rhythm */
@@ -88,8 +69,7 @@ body{
   background-color: var(--accent);
 }
 
-/* Keyboard focus only, mouse users never see a ring, keyboard users
-   get a deliberate one in the accent rather than the browser default. */
+/* focus ring for keyboard users only */
 :focus-visible{
   outline: 2px solid var(--accent);
   outline-offset: 3px;
@@ -102,9 +82,7 @@ img{ max-width: 100%; display: block; }
 
 a{ color: inherit; text-decoration: none; }
 
-/* Inline SVG icons (replaced the Font Awesome framework). Sized in em
-   so they scale with the surrounding text, and filled with currentColor
-   so they inherit hover/active colour like the old font glyphs did. */
+/* inline svg icons, sized in em, fill follows currentColor */
 .icon{
   width: 1em;
   height: 1em;
@@ -114,9 +92,7 @@ a{ color: inherit; text-decoration: none; }
   vertical-align: -0.125em;
 }
 
-/* Text links: a hairline that draws itself from the left on hover.
-   currentColor means it inherits whatever the hover colour resolves
-   to, so the rule never needs to know about the accent. */
+/* underline wipes in from the left on hover */
 .work-link,
 .contact-list a,
 .reveal-email,
@@ -143,18 +119,12 @@ a{ color: inherit; text-decoration: none; }
 .reveal-email:hover::after,
 .hero-links a:hover::after{ transform: scaleX(1); }
 
-/* Sentence case only, no forced Title Case anywhere. */
-
 /*--------------------- Headings ---------------------*/
 h1, h2, h3, h4, h5{
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-weight: 400;
   line-height: 1.12;
-  /* Newsreader is a narrower text serif than Fraunces, it needs
-     less negative tracking to avoid crowding. Its opsz axis does
-     the real refinement as size grows. */
   letter-spacing: -0.008em;
-  font-optical-sizing: auto;
   color: var(--ink);
 }
 
@@ -259,7 +229,7 @@ section{
   z-index: 999;
 }
 
-/* Compresses as you leave the hero, the bar earns its space back. */
+/* shrinks once you scroll past the hero */
 .header.sticky{
   padding-top: 0.95rem;
   padding-bottom: 0.95rem;
@@ -271,7 +241,7 @@ section{
 }
 
 .header .logo h2{
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 24px;
   font-weight: 500;
   letter-spacing: -0.01em;
@@ -288,8 +258,7 @@ section{
   transition: color 0.2s var(--ease);
 }
 
-/* Slides between sections as scroll-spy moves the .active class.
-   Width and position are set by nav-indicator.js. */
+/* sliding underline, positioned by nav-indicator.js */
 .nav-indicator{
   position: absolute;
   bottom: -7px;
@@ -316,7 +285,7 @@ section{
   color: var(--ink);
   cursor: pointer;
   display: none;
-  /* Reset native <button> chrome so the icon looks unchanged. */
+  /* strip button chrome */
   padding: 0;
   background: none;
   border: none;
@@ -389,10 +358,7 @@ section{
 
 .home .image{ flex: 0 1 22rem; }
 
-/* The source photo has an opaque pure-white background. Rather than
-   key it out (which fringes around hair), we multiply it over a warm
-   panel: white becomes the panel exactly, the subject is preserved,
-   and the portrait sits in the palette instead of on top of it. */
+/* multiply the white-background photo onto the panel */
 .portrait{
   position: relative;
   width: 100%;
@@ -412,16 +378,12 @@ section{
   mix-blend-mode: multiply;
 }
 
-/* Hero source is a tall selfie, cap it and bias the crop to the face,
-   dropping the arms that run off the bottom edges. */
+/* tall selfie, crop to the face */
 .home .portrait{ max-width: 22rem; }
 .home .portrait img{ object-position: center 42%; }
 
-/* About source is already a square head-and-shoulders crop. */
 /*--------------------- About ---------------------*/
-/* Editorial two-column: a display statement on the left, bio on the
-   right. The photo was removed deliberately, a single strong hero
-   portrait reads more premium than two low-res, mismatched ones. */
+/* two columns: statement left, bio right */
 .about .box-container{
   display: flex;
   align-items: flex-start;
@@ -431,8 +393,7 @@ section{
 
 .about-aside{ flex: 1 1 22rem; }
 
-/* Section heading, kept as an <h2> for the document outline but sized
-   down to a quiet mono label like the rest of the spec-sheet type. */
+/* h2 for the outline, styled as a small label */
 .about-kicker{
   font-family: var(--font-mono);
   font-size: 12px;
@@ -444,7 +405,7 @@ section{
 }
 
 .about-quote{
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-weight: 400;
   font-size: clamp(27px, 3.3vw, 39px);
   line-height: 1.2;
@@ -453,7 +414,7 @@ section{
   text-wrap: balance;
 }
 
-/* Short accent rule anchoring the statement. */
+/* little accent rule above the quote */
 .about-quote::before{
   content: "";
   display: block;
@@ -473,7 +434,7 @@ section{
   margin-bottom: 2.4rem;
 }
 
-/* Real facts, quiet, no inflated counters */
+/* facts row */
 .about-facts{
   list-style: none;
   display: flex;
@@ -491,7 +452,7 @@ section{
 
 .about-facts li:first-child{ padding-left: 0; border-left: none; }
 
-/* Skills, a quiet spec sheet, not a badge wall */
+/* skills */
 .skill-container{ margin-top: 7rem; }
 
 .skill-container .heading{ margin-bottom: 3rem; }
@@ -515,8 +476,7 @@ section{
   border-bottom: 1px solid var(--hairline);
 }
 
-/* A short accent tick overlapping the rule, the detail that makes
-   the column read as a designed spec sheet rather than a <ul>. */
+/* accent tick on the underline */
 .skill-label::after{
   content: "";
   position: absolute;
@@ -533,8 +493,7 @@ section{
   font-family: var(--font-mono);
   font-size: 13.5px;
   color: var(--ink);
-  /* Negative inline margin lets the hover wash bleed past the text
-     column while the type stays on the same optical line. */
+  /* negative margin lets the hover wash bleed past the text */
   padding: 0.6rem 0.7rem;
   margin: 0 -0.7rem;
   border-bottom: 1px solid var(--hairline-2);
@@ -612,8 +571,6 @@ section{
 }
 
 .service-item{
-  /* Asymmetric padding: more room below the text than above the icon,
-     so the card reads as composed rather than boxed. */
   padding: 2.4rem 2.2rem 2.8rem;
   background: var(--surface);
   border: 1px solid var(--hairline-2);
@@ -629,8 +586,7 @@ section{
   border-color: var(--hairline);
 }
 
-/* Icons live in a fixed chip so all three align regardless of glyph
-   width, the main reason an icon row looks untidy. */
+/* fixed chip so the icons line up */
 .service-item i{
   display: inline-flex;
   align-items: center;
@@ -705,9 +661,7 @@ section{
   background: var(--ink);
 }
 
-/* Browser-chrome mockup, pure CSS, so it stays crisp at any size
-   and costs no extra assets. Screens are anchored to the top so the
-   most meaningful part of each screenshot survives the crop. */
+/* pure-css browser frame */
 .browser{
   border: 1px solid var(--hairline);
   border-radius: 10px;
@@ -717,8 +671,7 @@ section{
   transition: box-shadow 0.45s var(--ease), transform 0.45s var(--ease);
 }
 
-/* Lift the mockup rather than the whole row, a full-width row
-   rising reads heavy; the card floating reads considered. */
+/* lift just the card on hover */
 .work-item:hover .browser{
   box-shadow: var(--shadow-lg);
   transform: translateY(-5px);
@@ -752,8 +705,7 @@ section{
   position: relative;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  /* Reserves the box and fills it with a palette tone, so a lazy or
-     failed image shows a considered panel rather than a blank hole. */
+  /* placeholder tone while the image loads */
   background-color: var(--tint);
 }
 
@@ -766,10 +718,7 @@ section{
   object-position: top center;
 }
 
-/* Directional wipe + settle as each row scrolls in. The wipe follows
-   the row's layout direction: odd rows (image left) reveal left→right,
-   even rows (image right) reveal right→left. Scoped to .has-reveal so
-   reduced-motion users never get the clipped start state. */
+/* image wipes in as the row scrolls up (direction follows the layout) */
 .has-reveal .work-item .browser-screen img,
 .has-reveal .work-item .browser-screen video{
   clip-path: inset(0 100% 0 0);
@@ -857,7 +806,7 @@ section{
 
 .work-link:hover .icon-external-link-alt{ transform: translate(2px, -2px); }
 
-/* Status note in place of a link, e.g. a private app with no public URL. */
+/* note shown instead of a link (e.g. private app) */
 .work-note{
   display: inline-flex;
   align-items: center;
@@ -913,8 +862,7 @@ section{
 
 .contact-list a:hover{ color: var(--accent); }
 
-/* Click-to-reveal email trigger: reads as a peer of the other values,
-   with a quiet affordance that it's an action. */
+/* email reveal button */
 .reveal-email{
   display: inline-flex;
   align-items: center;
@@ -978,7 +926,7 @@ section{
 
 .field textarea{ min-height: 9rem; resize: vertical; }
 
-/* Honeypot, visually removed, still in the tab-less DOM for bots */
+/* honeypot for bots, hidden off-screen */
 .hp{
   position: absolute;
   left: -9999px;
@@ -1049,8 +997,7 @@ footer .content p span{ color: var(--ink); }
   border-radius: 50%;
   z-index: 999;
   box-shadow: var(--shadow-md);
-  /* Hidden until scrolled; script.js toggles .is-visible. Replaces
-     jQuery's fadeIn/fadeOut with a CSS transition. */
+  /* hidden until you scroll down */
   opacity: 0;
   visibility: hidden;
   transition: transform 0.3s var(--ease), opacity 0.3s var(--ease),
@@ -1068,9 +1015,7 @@ footer .content p span{ color: var(--ink); }
 }
 
 /*--------------------- Motion: fade-and-rise on scroll ---------------------*/
-/* .has-reveal is set synchronously in <head> only when the user
-   has NOT requested reduced motion, so there is no flash and the
-   effect is fully disabled for people who need that. */
+/* .has-reveal is set in <head>, and only when reduced motion is off */
 .reveal{
   transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
 }
@@ -1088,7 +1033,7 @@ footer .content p span{ color: var(--ink); }
   }
   .reveal{ opacity: 1 !important; transform: none !important; }
 
-  /* New motion, neutralised: no wipe, no scale, no sliding underline. */
+  /* kill the wipe, scale and underline */
   .browser-screen img,
   .browser-screen video{
     clip-path: none !important;

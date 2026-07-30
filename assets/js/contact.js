@@ -1,7 +1,4 @@
-/* Click-to-reveal email: the address is split across data attributes
-   and only assembled in JS on click, so it never sits in the page
-   source as plain text for scrapers. Swaps the button for a real
-   mailto link once revealed. */
+/* email reveal: assembled from data attrs on click, then swapped for a mailto link */
 (function () {
   var trigger = document.querySelector('.reveal-email');
   if (!trigger) return;
@@ -18,8 +15,7 @@
   }, { once: true });
 })();
 
-/* Contact form → Formspree, submitted with fetch so the visitor
-   stays on the page and sees an inline success / error message. */
+/* contact form to Formspree via fetch, with an inline status message */
 (function () {
   var form = document.getElementById('contact-form');
   if (!form) return;

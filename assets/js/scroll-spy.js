@@ -1,7 +1,4 @@
-/* Highlights the nav link for whichever section is in view.
-   Vanilla, rAF-throttled. Emits `navspy:change` when the active
-   section changes so nav-indicator.js can react without duplicating
-   the section maths or depending on script execution order. */
+/* highlights the nav link for the section in view; emits navspy:change */
 (function () {
   var sections = Array.prototype.slice.call(document.querySelectorAll('section[id]'));
   var links = Array.prototype.slice.call(document.querySelectorAll('.navbar a[href^="#"]'));

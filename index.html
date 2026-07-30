@@ -29,23 +29,21 @@
     <meta name="twitter:description" content="Software developer with five years' experience building production web applications in C#, .NET, React and TypeScript." />
     <meta name="twitter:image" content="https://tiwagraceportfolio.vercel.app/assets/images/Home/image9.png" />
 
-    <!-- Google Fonts: Newsreader (editorial display) + IBM Plex Sans/Mono -->
+    <!-- Google Fonts: IBM Plex Sans + Mono (headings use the system font stack) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
 
-    <!-- Enable scroll reveal only when motion is welcome (set before paint = no flash) -->
+    <!-- Enable scroll reveal only when motion is welcome  -->
     <script>
         if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             document.documentElement.className += ' has-reveal';
 
-            // Failsafe: .reveal elements start at opacity 0 and are shown by
-            // reveal.js. If that script never ran, drop the hidden state so
-            // the page can never be left blank.
+            // failsafe: if reveal.js never ran, show everything
             window.addEventListener('load', function () {
                 setTimeout(function () {
                     var root = document.documentElement;
@@ -116,8 +114,11 @@
             </div>
             <div class="image reveal">
                 <div class="portrait">
-                    <img src="./assets/images/Home/image9.png" alt="Portrait of Grace Tiwa"
-                         width="375" height="666" fetchpriority="high" decoding="async">
+                    <picture>
+                        <source type="image/webp" srcset="./assets/images/Home/image9@2x.webp">
+                        <img src="./assets/images/Home/image9.png" alt="Portrait of Grace Tiwa"
+                             width="375" height="666" fetchpriority="high" decoding="async">
+                    </picture>
                 </div>
             </div>
 
